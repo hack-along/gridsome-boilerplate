@@ -215,4 +215,7 @@ module.exports = {
   },
   variants: {},
   plugins: [],
+  future: {
+    removeDeprecatedGapUtilities: true //https://tailwindcss.com/docs/upcoming-changes
+  },
 }
