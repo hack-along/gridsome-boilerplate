@@ -1,6 +1,7 @@
 ---
-title: The Index Event
-excerpt: What will we say here.
+title: This is my example event title
+excerpt: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quasi natus itaque qui odit. Et, dolorem tempore labore ex expedita laboriosam, ipsam repellat ad quas natus minus sunt magni obcaecati.
+date: 22-09-2020
 ---
 
 # {{ $frontmatter.title }}
