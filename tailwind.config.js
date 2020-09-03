@@ -4,7 +4,9 @@ const {
 
 
 module.exports = {
-  purge: [],
+  purge: {
+    enabled: false
+  },
   theme: {
     container: {
       center: true,
