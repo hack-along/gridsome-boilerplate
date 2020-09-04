@@ -15,7 +15,15 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require(
 
 module.exports = {
   siteName: 'Hackalong boilerplate',
-  plugins: [],
+  plugins: [{
+    use: '@gridsome/vue-remark',
+    options: {
+      typeName: 'Event', // Required
+      baseDir: './content/events', // Where .md files are located
+      pathPrefix: '/event', // Add route prefix. Optional
+      template: './src/templates/Event.vue' // Optional
+    }
+  }],
   css: {
     loaderOptions: {
       postcss: {

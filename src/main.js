@@ -10,7 +10,7 @@ import Footer from '~/components/Footer.vue'
 import HeroContainer from '~/components/HeroContainer.vue'
 import Card from '~/components/Card.vue'
 import VueScrollTo from 'vue-scrollto'
-
+import EventContainer from '~/components/EventContainer.vue'
 
 export default function (Vue, {
   router,
@@ -28,6 +28,10 @@ export default function (Vue, {
 
   //cards
   Vue.component('card', Card)
+
+  //custom contnet parts
+  //events
+  Vue.component('event-container', EventContainer)
 
   //initilize other plugins
   Vue.use(VueScrollTo)
