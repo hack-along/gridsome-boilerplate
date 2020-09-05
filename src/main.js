@@ -1,6 +1,6 @@
 // This is the main.js file. Import global CSS and scripts here.
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
-
+import moment from 'moment';
 import '~/assets/css/main.scss'
 
 import DefaultLayout from '~/layouts/Default.vue'
@@ -11,6 +11,10 @@ import HeroContainer from '~/components/HeroContainer.vue'
 import Card from '~/components/Card.vue'
 import VueScrollTo from 'vue-scrollto'
 import EventContainer from '~/components/EventContainer.vue'
+
+
+
+
 
 export default function (Vue, {
   router,
@@ -34,5 +38,36 @@ export default function (Vue, {
   Vue.component('event-container', EventContainer)
 
   //initilize other plugins
-  Vue.use(VueScrollTo)
+  Vue.use(VueScrollTo);
+
+  Vue.filter('formatDate', function (value, format) {
+    if (!value) return;
+    let date,
+      isoTimestamp;
+
+    format = format ? format : 'MM-DD-YYYY';
+    isoTimestamp = moment(String(value), 'YYYY-MM-DDTHH:mm:ssZ').isValid();
+
+    date = isoTimestamp ?
+      moment(String(value), 'YYYY-MM-DDTHH:mm:ssZ').format(format) :
+      moment(String(value), 'x').format(format);
+
+    return date
+  });
+  Vue.filter('formatTime', function (value, format) {
+    if (!value) return;
+    let date,
+      isoTimestamp;
+
+    format = format ? format : 'HH:mm';
+    isoTimestamp = moment(String(value), 'YYYY-MM-DDTHH:mm:ssZ').isValid();
+
+    date = isoTimestamp ?
+      moment(String(value), 'YYYY-MM-DDTHH:mm:ssZ').format(format) :
+      moment(String(value), 'x').format(format);
+
+    if (date !== "00:00") return date
+  });
+
+
 }

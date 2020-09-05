@@ -4,16 +4,17 @@ excerpt: sit amet consectetur adipisicing elit. Fugiat similique enim nemo
   minima, aliquam nulla quaerat error sit totam sequi deleniti corrupti nam quae
   labore consequuntur a consequatur eius illo!
 image: /assets/static/static/hackalonglogo1.png
-date: 2020-09-07T22:00:00.000Z
+date: 2020-09-22:00:00
 time: tba
 ---
+
 # Hello & World
 
 > A block quote.
 
-* Some *emphasis*, **importance**, and `code`.
+- Some _emphasis_, **importance**, and `code`.
 
-  * eh
+  - eh
 
   ### {{ $frontmatter.title }}
 
