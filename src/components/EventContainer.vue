@@ -7,9 +7,9 @@
     >
       <template v-for="(event, index) in $static.events.edges">
         <dt class="text-xl" :key="`time${index}`">
-          <strong>{{ event.node.date }}</strong>
+          <strong>{{ event.node.date | formatDate('dddd, Do MMMM') }}</strong>
           <br />
-          {{ event.node.time }}
+          {{ event.node.date | formatTime }}
         </dt>
         <dd class="col-span-3" :key="index">
           <g-link :to="event.node.path">
