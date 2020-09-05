@@ -20,9 +20,10 @@ collections:
           default: "",
           widget: "datetime",
           dateFormat: "YYYY-MM-DD",
-          time_format: "HH:mm",
+          time_format: false,
           picker_utc: true,
         }
+      - { label: "Time", name: "time", default: "00:00", widget: "string" }
       - {
           label: "Featured Image",
           name: "thumbnail",

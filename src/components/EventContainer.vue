@@ -9,7 +9,7 @@
         <dt class="text-xl" :key="`time${index}`">
           <strong>{{ event.node.date | formatDate('dddd, Do MMMM') }}</strong>
           <br />
-          {{ event.node.date | formatTime }}
+          {{ event.node.time | formatTime }}
         </dt>
         <dd class="col-span-3" :key="index">
           <g-link :to="event.node.path">

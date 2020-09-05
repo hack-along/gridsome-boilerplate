@@ -1,6 +1,6 @@
 // This is the main.js file. Import global CSS and scripts here.
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
-import moment from 'moment';
+import moment from 'moment-timezone';
 import '~/assets/css/main.scss'
 
 import DefaultLayout from '~/layouts/Default.vue'
@@ -59,12 +59,15 @@ export default function (Vue, {
     let date,
       isoTimestamp;
 
-    format = format ? format : 'HH:mm';
-    isoTimestamp = moment(String(value), 'YYYY-MM-DDTHH:mm:ssZ').isValid();
-
-    date = isoTimestamp ?
-      moment(String(value), 'YYYY-MM-DDTHH:mm:ssZ').format(format) :
-      moment(String(value), 'x').format(format);
+    format = format ? format : 'HH:mm z';
+    isoTimestamp = moment(value, 'h:mm a').isValid();
+    // let newDate = isoTimestamp ? moment.tz(value, 'h:mm a', 'Europe/Rome') : false;
+    // if (newDate) {
+    //   console.log(newDate)
+    //   console.log(newDate.tz('America/Costa_Rica').format(format))
+    //   console.log(newDate.tz('Asia/Kolkata').format(format))
+    // }
+    date = isoTimestamp ? moment(value, 'h:mm a').tz('Europe/Rome').format(format) : value;
 
     if (date !== "00:00") return date
   });
