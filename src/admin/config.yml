@@ -23,7 +23,7 @@ collections:
           timeFormat: false,
           pickerUtc: true,
         }
-    - {
+      - {
           label: "Date underscore",
           name: "date",
           widget: "datetime",
