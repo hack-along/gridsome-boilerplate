@@ -2,7 +2,7 @@ backend:
   name: github
   repo: hack-along/gridsome-boilerplate
 
-media_folder: "static/uploads"
+media_folder: "static/uploads/events"
 public_folder: "/uploads"
 
 collections:
@@ -14,5 +14,19 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Excerpt", name: "excerpt", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "date" }
+      - {
+          label: "Date",
+          name: "date",
+          default: "",
+          widget: "datetime",
+          dateFormat: "YYYY-MM-DD",
+          time_format: "HH:mm",
+          picker_utc: true,
+        }
+      - {
+          label: "Featured Image",
+          name: "thumbnail",
+          widget: "image",
+          media_library: { config: { multiple: false } },
+        }
       - { label: "Body", name: "body", widget: "markdown" }
