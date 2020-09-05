@@ -17,11 +17,29 @@ collections:
       - {
           label: "Date",
           name: "date",
-          default: "",
           widget: "datetime",
+          default: "",
           dateFormat: "YYYY-MM-DD",
+          timeFormat: false,
+          pickerUtc: true,
+        }
+    - {
+          label: "Date underscore",
+          name: "date",
+          widget: "datetime",
+          default: "",
+          date_format: "YYYY-MM-DD",
           time_format: false,
           picker_utc: true,
+        }
+      - {
+          label: "only time",
+          name: "timeonly",
+          widget: "datetime",
+          default: "",
+          format: "HH:mm A",
+          dateFormat: false,
+          timeFormat: true,
         }
       - { label: "Time", name: "time", default: "00:00", widget: "string" }
       - {
