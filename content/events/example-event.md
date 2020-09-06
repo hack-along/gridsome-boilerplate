@@ -8,7 +8,10 @@ date: 2020-09-22T00:00:00.000Z
 start_time: 1900
 end_time: 2000
 thumbnail: /uploads/events/moon.png
-tags: ["patterns", "crypto", "community", "new economy"]
+tags:
+  - patterns
+  - community
+  - new economy
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Idem iste, inquam, de voluptate quid sentit? Te ipsum, dignissimum maioribus tuis, voluptasne induxit, ut adolescentulus eriperes P. [Sint modo partes vitae beatae.](http://loripsum.net/) [Non autem hoc: igitur ne illud quidem.](http://loripsum.net/) [Ea possunt paria non esse.](http://loripsum.net/)
