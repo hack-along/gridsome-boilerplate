@@ -24,11 +24,16 @@ collections:
           pickerUtc: true,
         }
       - {
-          label: "Time (format without seperator eg. 1600 or 1830)",
-          name: "time",
+          label: "Start Time (format without seperator eg. 1600 or 1830)",
+          name: "start_time",
           default: "0000",
           widget: "string",
-          comment: 'This is a multiline\ncomment',
+        }
+      - {
+          label: "End Time (format without seperator eg. 1600 or 1830)",
+          name: "end_time",
+          default: "0000",
+          widget: "string",
         }
       - {
           label: "Featured Image",
@@ -36,4 +41,20 @@ collections:
           widget: "image",
           media_library: { config: { multiple: false } },
         }
+      - {
+          label: "Tagss",
+          name: "tags",
+          widget: "relation",
+          collection: "tag",
+          valueField: "title",
+          searchFields: ["title"],
+          displayFields: ["title"],
+        }
       - { label: "Body", name: "body", widget: "markdown" }
+  - name: "tag"
+    label: "Tags"
+    create: false
+    slug: "{{slug}}"
+    folder: false,
+    fields:
+      - { label: "Title", name: "title", widget: "string" }

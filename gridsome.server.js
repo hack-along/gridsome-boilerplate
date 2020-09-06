@@ -16,7 +16,8 @@ module.exports = function (api) {
       title: String,
       excerpt: String,
       date: String,
-      time: String,
+      start_time: String,
+      end_time: String,
       thumbnail: String,
       
     }
