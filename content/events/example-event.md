@@ -1,5 +1,5 @@
 ---
-title: Example Event
+title: Example Events
 excerpt: Donec eu magna bibendum, placerat nibh vel, facilisis eros. Nullam
   suscipit finibus placerat. Nunc pellentesque augue eu dolor aliquet iaculis.
   Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
