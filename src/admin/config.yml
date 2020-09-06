@@ -42,19 +42,12 @@ collections:
           media_library: { config: { multiple: false } },
         }
       - {
-          label: "Tagss",
+          label: "Tags (comma seperated list eg: item1, item2)",
           name: "tags",
-          widget: "relation",
+          widget: "list",
           collection: "tag",
           valueField: "title",
           searchFields: ["title"],
           displayFields: ["title"],
         }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: "tag"
-    label: "Tags"
-    create: false
-    slug: "{{slug}}"
-    folder: false,
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
