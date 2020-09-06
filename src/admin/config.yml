@@ -3,7 +3,7 @@ backend:
   repo: hack-along/gridsome-boilerplate
 
 media_folder: "static/uploads/events"
-public_folder: "/uploads"
+public_folder: "/uploads/events"
 
 collections:
   - name: "event"
@@ -13,7 +13,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Excerpt", name: "excerpt", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
       - {
           label: "Date",
           name: "date",
@@ -24,24 +24,12 @@ collections:
           pickerUtc: true,
         }
       - {
-          label: "Date underscore",
-          name: "date_undersocre",
-          widget: "datetime",
-          default: "",
-          date_format: "YYYY-MM-DD",
-          time_format: false,
-          picker_utc: true,
+          label: "Time (format without seperator eg. 1600 or 1830)",
+          name: "time",
+          default: "0000",
+          widget: "string",
+          comment: 'This is a multiline\ncomment',
         }
-      - {
-          label: "only time",
-          name: "timeonly",
-          widget: "datetime",
-          default: "",
-          format: "HH:mm A",
-          dateFormat: false,
-          timeFormat: true,
-        }
-      - { label: "Time", name: "time", default: "00:00", widget: "string" }
       - {
           label: "Featured Image",
           name: "thumbnail",

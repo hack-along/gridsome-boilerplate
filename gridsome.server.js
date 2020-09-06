@@ -7,9 +7,20 @@
 
 module.exports = function (api) {
   api.loadSource(({
-    addCollection
+    addCollection,
+    addSchemaTypes
   }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+
+    addSchemaTypes(`
+    type Event implements Node @infer {
+      title: String,
+      excerpt: String,
+      date: String,
+      time: String,
+      thumbnail: String,
+      
+    }
+  `)
   })
 
   api.createPages(({

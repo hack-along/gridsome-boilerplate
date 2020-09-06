@@ -54,20 +54,23 @@ export default function (Vue, {
 
     return date
   });
-  Vue.filter('formatTime', function (value, format) {
+  Vue.filter('formatTime', function (value, format, timezones) {
     if (!value) return;
     let date,
       isoTimestamp;
-
+    let seperator = " | ";
     format = format ? format : 'HH:mm z';
     isoTimestamp = moment(value, 'h:mm a').isValid();
-    // let newDate = isoTimestamp ? moment.tz(value, 'h:mm a', 'Europe/Rome') : false;
-    // if (newDate) {
-    //   console.log(newDate)
-    //   console.log(newDate.tz('America/Costa_Rica').format(format))
-    //   console.log(newDate.tz('Asia/Kolkata').format(format))
-    // }
+
     date = isoTimestamp ? moment(value, 'h:mm a').tz('Europe/Rome').format(format) : value;
+
+    if (timezones) {
+      let timzoneDate = isoTimestamp ? moment.tz(value, 'h:mm a', 'Europe/Rome') : false;
+      if (timzoneDate && date !== "00:00") {
+        date = date + seperator + timzoneDate.tz('America/Costa_Rica').format(format) +
+          seperator + timzoneDate.tz('Asia/Kolkata').format(format)
+      }
+    }
 
     if (date !== "00:00") return date
   });
