@@ -13,6 +13,7 @@
     "gridsome": "^0.7.20",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "moment": "^2.27.0",
+    "moment-timezone": "^0.5.31",
     "netlify-cms": "^2.10.56",
     "tailwindcss": "^1.7.6",
     "vue-scrollto": "^2.18.2"

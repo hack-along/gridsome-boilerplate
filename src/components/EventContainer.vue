@@ -6,10 +6,9 @@
       class="grid grid-cols-4 gap-8 bg-white rounded-sm shadow-lg p-4 mt-4"
     >
       <template v-for="(event, index) in $static.events.edges">
-        <dt class="text-xl" :key="`time${index}`">
-          <strong>{{ event.node.date | formatDate('dddd, Do MMMM') }}</strong>
-          <br />
-          {{ event.node.date | formatTime }}
+        <dt :key="`time${index}`">
+          <strong class="text-xl block mb-2">{{ event.node.date | formatDate('dddd, Do MMMM') }}</strong>
+          {{ event.node.time | formatTime(false,true) }}
         </dt>
         <dd class="col-span-3" :key="index">
           <g-link :to="event.node.path">
