@@ -5,8 +5,10 @@ excerpt: Donec eu magna bibendum, placerat nibh vel, facilisis eros. Nullam
   Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
   inceptos himenaeos. In mi nisi, laoreet in nisi at, facilisis sodales ante.
 date: 2020-09-22T00:00:00.000Z
-time: 1900
+start_time: 1900
+end_time: 2000
 thumbnail: /uploads/events/moon.png
+tags: ["patterns", "crypto", "community", "new economy"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Idem iste, inquam, de voluptate quid sentit? Te ipsum, dignissimum maioribus tuis, voluptasne induxit, ut adolescentulus eriperes P. [Sint modo partes vitae beatae.](http://loripsum.net/) [Non autem hoc: igitur ne illud quidem.](http://loripsum.net/) [Ea possunt paria non esse.](http://loripsum.net/)

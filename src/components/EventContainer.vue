@@ -8,7 +8,7 @@
       <template v-for="(event, index) in $static.events.edges">
         <dt :key="`time${index}`">
           <strong class="text-xl block mb-2">{{ event.node.date | formatDate('dddd, Do MMMM') }}</strong>
-          {{ event.node.time | formatTime(false,true) }}
+          {{ event.node.start_time | formatTime(false,true) }}
         </dt>
         <dd class="col-span-3" :key="index">
           <g-link :to="event.node.path">
@@ -32,7 +32,8 @@ query Event {
         title
         path
         excerpt
-        time
+        start_time
+        end_time
         date
       }
     }

@@ -28,3 +28,11 @@ p {
 body {
     @apply bg-grey-200;
 }
+
+.badge {
+    @apply text-xs bg-black-900 text-white py-1 px-2 mr-4
+}
+
+.badge a {
+    @apply text-white
+}
