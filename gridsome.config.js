@@ -17,7 +17,7 @@ module.exports = {
   siteName: 'Hackalong boilerplate',
   templates: {
     Tag: [{
-      path: '/tag/:title',
+      path: '/event/tag/:title',
       component: './src/templates/Tag.vue'
     }]
   },

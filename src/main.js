@@ -11,6 +11,8 @@ import HeroContainer from '~/components/HeroContainer.vue'
 import Card from '~/components/Card.vue'
 import VueScrollTo from 'vue-scrollto'
 import EventContainer from '~/components/EventContainer.vue'
+import EventList from '~/components/EventList.vue'
+import TagNav from '~/components/TagNav.vue'
 
 
 
@@ -36,6 +38,8 @@ export default function (Vue, {
   //custom contnet parts
   //events
   Vue.component('event-container', EventContainer)
+  Vue.component('event-list', EventList)
+  Vue.component('tag-nav', TagNav)
 
   //initilize other plugins
   Vue.use(VueScrollTo);
