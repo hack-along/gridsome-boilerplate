@@ -10,4 +10,13 @@
   </div>
 </template>
 
+<style >
+.hide-before-load {
+  opacity: 0;
+}
+.hide-before-load.loaded {
+  opacity: 1;
+}
+</style>
+
 

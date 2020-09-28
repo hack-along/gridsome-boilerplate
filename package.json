@@ -8,19 +8,26 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "@gridsome/vue-remark": "^0.2.4",
-    "@tailwindcss/typography": "^0.2.0",
-    "gridsome": "^0.7.20",
-    "gridsome-plugin-netlify-cms": "^1.0.9",
-    "moment": "^2.27.0",
-    "moment-timezone": "^0.5.31",
-    "netlify-cms": "^2.10.56",
-    "tailwindcss": "^1.7.6",
-    "vue-scrollto": "^2.18.2"
+    "gridsome": "^0.7.21",
+    "vue-scrollactive": "^0.9.3",
+    "vue-youtube-embed": "^2.2.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@gridsome/source-filesystem": "^0.6.2",
+    "@gridsome/transformer-remark": "^0.6.3",
+    "@gridsome/vue-remark": "^0.2.5",
+    "@tailwindcss/typography": "^0.2.0",
+    "animejs": "^3.2.0",
+    "gridsome-plugin-netlify-cms": "^1.0.9",
+    "gridsome-plugin-pwa": "0.0.18",
+    "moment": "^2.29.0",
+    "moment-locales-webpack-plugin": "^1.2.0",
+    "moment-timezone": "^0.5.31",
+    "netlify-cms": "^2.10.61",
     "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "tailwindcss": "^1.8.10",
+    "webpack-bundle-analyzer": "^3.8.0"
   }
 }
