@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: hack-along/gridsome-boilerplate
+  branch: master
 
 media_folder: "static/uploads/events"
 public_folder: "/uploads/events"
