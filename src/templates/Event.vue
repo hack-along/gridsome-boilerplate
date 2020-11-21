@@ -71,7 +71,7 @@ query {
 export default {
   metaInfo() {
     return {
-      title: "Equinox",
+      title: this.$page.event.title + " | " + this.$static.metadata.siteName,
       meta: [
         { name: "description", content: this.$page.event.excerpt },
         // twitter-card: https://cards-dev.twitter.com/validator

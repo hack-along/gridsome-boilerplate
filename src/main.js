@@ -16,8 +16,8 @@ import EventContainer from '~/components/EventContainer.vue'
 import EventList from '~/components/EventList.vue'
 import TagNav from '~/components/TagNav.vue'
 
+import ThankYou from '~/components/ThankYouContainer.vue'
 
-import IndexPage from '~/pages/Index.vue'
 import Sprite from '~/components/Sprite.vue'
 
 import VueScrollactive from 'vue-scrollactive';
@@ -36,7 +36,6 @@ export default function (Vue, {
   Vue.component('LayoutHero', HeroLayout)
 
 
-  Vue.component('IndexPage', IndexPage)
 
   //add page parts as default components
   Vue.component('nav-bar', NavBar)
