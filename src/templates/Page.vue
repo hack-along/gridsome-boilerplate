@@ -35,6 +35,7 @@ query {
   metadata {
     siteName
     siteUrl
+    repoUrl
   }
 }
 </static-query>
@@ -43,7 +44,7 @@ query {
 export default {
   metaInfo() {
     return {
-      title: "Equinox",
+      title: this.$page.mdPage.title + " | " + this.$static.metadata.siteName,
       meta: [
         // twitter-card: https://cards-dev.twitter.com/validator
         { name: "twitter:card", content: "summary_large_image" },
@@ -62,7 +63,7 @@ export default {
   computed: {
     getCoverImage() {
       // @TODO: ADD A CARD FALLBACK IMG
-      return this.$static.metadata.siteUrl + "card.jpg";
+      return this.$static.metadata.siteUrl + "/socail_share/card.jpg";
     },
     getUrl() {
       return this.$static.metadata.siteUrl + this.$page.mdPage.path;
@@ -73,7 +74,7 @@ export default {
     editLink() {
       let path = this.currentPath;
 
-      return `https://github.com/hack-along/EquinoxUnconf/tree/master/content/page${path}.md`;
+      return `${this.$static.metadata.repoUrl}/content/page${path}.md`;
     },
   },
 };

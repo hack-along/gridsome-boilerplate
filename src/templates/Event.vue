@@ -62,6 +62,7 @@ query {
   metadata {
     siteName
     siteUrl
+    repoUrl
   }
 }
 </static-query>
@@ -91,7 +92,7 @@ export default {
       let img =
         this.$page.event.thumbnail !== null
           ? this.$static.metadata.siteUrl + this.$page.event.thumbnail
-          : this.$static.metadata.siteUrl + "card.jpg";
+          : this.$static.metadata.siteUrl + "socail_share/card.jpg";
       return img;
     },
     getUrl() {
@@ -104,7 +105,7 @@ export default {
       let path = this.currentPath;
       if ((path.match(new RegExp("/", "g")) || []).length == 1)
         path = path + "/README";
-      return `https://github.com/hack-along/EquinoxUnconf/tree/master/content${path}.md`;
+      return `${this.$static.metadata.repoUrl}/content${path}.md`;
     },
   },
 };

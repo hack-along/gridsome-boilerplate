@@ -19,6 +19,10 @@ module.exports = {
   siteName: 'Hackalong Boilerplate',
   siteDescription: "Lorem ipsum",
   siteUrl: "http://hackalong.io",
+  metadata: {
+    repoUrl: "https://github.com/hack-along/gridsome-boilerplate/tree/master",
+
+  },
   templates: {
     Tag: [{
       path: '/event/tag/:title',
