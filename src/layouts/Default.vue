@@ -3,11 +3,20 @@
     <header class="header">
       <nav-bar />
     </header>
-    <main class="container flex-grow">
+    <main class="container flex-grow py-8">
       <slot />
     </main>
     <g-footer />
   </div>
 </template>
+
+<style >
+.hide-before-load {
+  opacity: 0;
+}
+.hide-before-load.loaded {
+  opacity: 1;
+}
+</style>
 
 

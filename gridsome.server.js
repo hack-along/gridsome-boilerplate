@@ -8,11 +8,20 @@
 module.exports = function (api) {
   api.loadSource(({
     addCollection,
-    addSchemaTypes
+    addSchemaTypes,
+    addSchemaResolvers
   }) => {
 
     addSchemaTypes(`
+    type MdPage implements Node @infer {
+      id: ID!,
+      title: String,      
+    }
+  `)
+
+    addSchemaTypes(`
     type Event implements Node @infer {
+      id: ID!,
       title: String,
       excerpt: String,
       date: String,
@@ -22,6 +31,41 @@ module.exports = function (api) {
       
     }
   `)
+    addSchemaTypes(`
+    type Blocks implements Node @infer {
+      title: String,
+      subtitle: String,
+      content: String,
+      img: Image,
+      link: String,
+      emoji: String,
+      extraClass: String,
+      tags: String,
+      extraClassImg: String,
+      extraClassHeader: String,  
+    }
+  `)
+    addSchemaResolvers({
+      Blocks: {
+        fileName: {
+          type: 'String',
+          resolve(obj) {
+            return `${obj.fileInfo.name}`
+          }
+        }
+      }
+    })
+    addSchemaResolvers({
+      Event: {
+        hasContent: {
+          type: 'Boolean',
+          resolve(obj) {
+            return obj.content.length
+          }
+        }
+      }
+    })
+
   })
 
   api.createPages(({

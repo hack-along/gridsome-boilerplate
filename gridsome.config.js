@@ -6,6 +6,8 @@
 
 const tailwind = require('tailwindcss')
 const purgecss = require('@fullhuman/postcss-purgecss')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 const postcssPlugins = [
   tailwind(),
@@ -14,7 +16,13 @@ const postcssPlugins = [
 if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
 
 module.exports = {
-  siteName: 'Hackalong boilerplate',
+  siteName: 'Hackalong Boilerplate',
+  siteDescription: "Lorem ipsum",
+  siteUrl: "http://hackalong.io",
+  metadata: {
+    repoUrl: "https://github.com/hack-along/gridsome-boilerplate/tree/master",
+
+  },
   templates: {
     Tag: [{
       path: '/event/tag/:title',
@@ -26,7 +34,7 @@ module.exports = {
       options: {
         typeName: 'Event', // Required
         baseDir: './content/events', // Where .md files are located
-        pathPrefix: '/event', // Add route prefix. Optional
+        pathPrefix: '/events', // Add route prefix. Optional
         template: './src/templates/Event.vue', // Optional
         refs: {
           tags: {
@@ -37,11 +45,29 @@ module.exports = {
       }
     },
     {
+      use: '@gridsome/vue-remark',
+      options: {
+        typeName: 'MdPage', // Required
+        baseDir: './content/page', // Where .md files are located
+        pathPrefix: '/', // Add route prefix. Optional
+        template: './src/templates/Page.vue', // Optional
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Blocks',
+        baseDir: './content/blocks',
+        pathPrefix: '/blocks',
+        path: '*.md',
+      }
+    },
+    {
       use: `gridsome-plugin-netlify-cms`,
       options: {
         publicPath: `/admin`
       }
-    }
+    },
   ],
   css: {
     loaderOptions: {
@@ -50,4 +76,19 @@ module.exports = {
       },
     },
   },
+  transformers: {
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+    }
+  },
+  chainWebpack: config => {
+    // config
+    //   .plugin('BundleAnalyzerPlugin')
+    //   .use(BundleAnalyzerPlugin, [{
+    //     analyzerMode: 'static'
+    //   }])
+    config.plugin('MomentLocalesPlugin').use(MomentLocalesPlugin())
+    config.resolve.alias.set('@images', '@/assets/img')
+  }
 }

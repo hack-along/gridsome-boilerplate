@@ -1,21 +1,33 @@
 <template>
-  <header class="header sticky top-0 bg-white mb-5">
+  <header class="header sticky top-0 bg-white">
     <div class="h-2 w-full bg-primary-500"></div>
     <nav class="flex items-center justify-between flex-wrap py-6 container">
       <!-- site title / logo -->
-      <div class="flex items-center flex-no-shrink mr-6">
-        <strong>
-          <g-link to="/" :title="$static.metadata.siteName">
-            <g-image src="../../static/hackalonglogo1.png" class="w-40" alt="logo" />
-          </g-link>
-        </strong>
+      <div class="flex items-center flex-no-shrink mr-6 h-10">
+        <g-link
+          class="text-accent-600 uppercase py-3 text-right font-bold"
+          to="/"
+          :title="$static.metadata.siteName"
+        >
+          <g-image
+            src="@/assets/img/logo.png"
+            width="50"
+            height="50"
+            alt="logo"
+            fit="outside"
+          />
+        </g-link>
       </div>
       <!-- end site title / logo -->
 
       <!-- mobile navigation toggle -->
       <div class="block sm:hidden">
         <button @click="toggle" class="nav-toggle">
-          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            class="fill-current h-3 w-3"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
@@ -24,20 +36,26 @@
       <!-- end navigation toggle -->
 
       <!-- Navigation Links-->
-      <div
-        :class="open ? 'block': 'hidden'"
+
+      <scrollactive
+        :class="open ? 'block' : 'hidden'"
         class="w-full sm:flex sm:items-center sm:w-auto flex-grow sm:flex-grow-0"
+        active-class="active"
+        :offset="120"
+        :duration="100"
+        bezier-easing-value="0,0,.58,1"
       >
-        <a
-          v-if="$route.path === '/example-hero/'"
-          href="#details"
-          v-scroll-to="'#details'"
-          class="nav-link"
-        >Details</a>
-        <g-link v-else to="/example-hero/#details" class="nav-link">Details</g-link>
-        <g-link class="nav-link" to="/">Home</g-link>
-        <g-link class="nav-link" to="/example-hero/">Example Hero</g-link>
-      </div>
+        <router-link to="/#events" class="nav-link scrollactive-item"
+          >Example section link</router-link
+        >
+        <router-link to="/hero" class="nav-link scrollactive-item"
+          >Example hero</router-link
+        >
+        <router-link to="/faq" class="nav-link scrollactive-item"
+          >Example markdown page</router-link
+        >
+      </scrollactive>
+
       <!-- End navigation Links-->
     </nav>
   </header>
@@ -55,14 +73,14 @@ query {
 export default {
   data() {
     return {
-      open: false
+      open: false,
     };
   },
   methods: {
     toggle() {
       this.open = !this.open;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -82,8 +100,8 @@ nav {
     }
     &:hover,
     &:focus,
-    &.active--exact {
-      @apply text-accent-500;
+    &.active {
+      @apply text-accent-600;
     }
   }
 }

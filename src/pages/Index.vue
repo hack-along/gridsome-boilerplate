@@ -7,7 +7,7 @@
       <card v-for="card in cards" v-bind="card" :key="card.title"></card>
     </div>
     <div class="flex flex-wrap mt-10">
-      <event-container />
+      <event-container id="events" />
     </div>
   </Layout>
 </template>

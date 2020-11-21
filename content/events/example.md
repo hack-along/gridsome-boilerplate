@@ -3,7 +3,7 @@ title: This is my example event title
 excerpt: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quasi natus itaque qui odit. Et, dolorem tempore labore ex expedita laboriosam, ipsam repellat ad quas natus minus sunt magni obcaecati.
 date: 2020-09-22
 start_time: 1400
-tags: ["community", "new economy"]
+tags: ["community", "new economy"] #can be saved either as an array ["item1", "item2"] or as a list
 ---
 
 # {{ $frontmatter.title }}

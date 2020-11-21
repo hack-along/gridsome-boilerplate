@@ -22,6 +22,15 @@ query Tag ($id: ID!) {
               start_time
               end_time
               date
+            hasContent
+              fileInfo {
+                path
+              }
+              tags {
+                    id
+                    title
+                    path
+                  }
           }
         }
       }
