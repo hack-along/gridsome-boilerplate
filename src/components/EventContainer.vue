@@ -3,7 +3,6 @@
     <div class="flex align-top pb-0">
       <div class="mb-0">
         <h2>{{ title }}</h2>
-        <span class="subtitle">{{ subtitle }}</span>
       </div>
       <g-link
         href="/admin/"
@@ -61,4 +60,3 @@ export default {
   },
 };
 </script>
-
