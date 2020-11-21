@@ -51,6 +51,9 @@
         <router-link to="/hero" class="nav-link scrollactive-item"
           >Example hero</router-link
         >
+        <router-link to="/faq" class="nav-link scrollactive-item"
+          >Example markdown page</router-link
+        >
       </scrollactive>
 
       <!-- End navigation Links-->
