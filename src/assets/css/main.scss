@@ -1,38 +1,88 @@
 @tailwind base;
 
 h1 {
-    @apply text-2xl font-bold;
+  @apply text-2xl font-bold;
 }
 
 h2 {
-    @apply text-xl font-bold;
+  @apply text-xl font-bold;
 }
 
 h3 {
-    @apply text-lg font-bold;
+  @apply text-lg font-bold;
 }
 
 a {
-    @apply text-accent-600;
+  @apply text-accent-600;
 }
 
 p {
-    @apply mb-4;
+  @apply mb-4;
 }
 
 @tailwind components;
 
 @tailwind utilities;
 
-
 body {
-    @apply bg-grey-200;
-}
-
-.badge {
-    @apply text-xs bg-black-900 text-white py-1 px-2 mr-4
+  @apply bg-grey-200;
 }
 
 .badge a {
-    @apply text-white
+  @apply text-xs bg-primary-700 text-white py-1 px-2 mr-4;
+
+  &.badge-light {
+    @apply bg-transparent text-primary-700 border border-primary-700;
+
+    &:hover {
+      @apply bg-accent-500;
+    }
+  }
+  &:hover {
+    @apply bg-accent-500;
+  }
+}
+
+.subtitle {
+  @apply text-grey-900 block mb-4;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
+.card {
+  @apply bg-white border border-primary-900 overflow-hidden flex-1 flex flex-col relative;
+
+  .card-body {
+    @apply p-4 flex-1 flex flex-col;
+  }
+}
+
+.card-grid-3 {
+  @apply grid gap-3 grid-cols-1;
+
+  @media (min-width: 768px) {
+    @apply grid-cols-2;
+  }
+
+  @media (min-width: 1024px) {
+    @apply grid-cols-3;
+  }
+}
+
+.card-grid-1 {
+  @apply grid gap-5 grid-cols-1;
+
+  @media (min-width: 768px) {
+    @apply grid-cols-1;
+  }
+}
+
+.card-grid-2 {
+  @apply grid gap-5 grid-cols-1;
+
+  @media (min-width: 768px) {
+    @apply grid-cols-2;
+  }
 }
