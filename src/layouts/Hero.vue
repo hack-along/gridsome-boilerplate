@@ -5,7 +5,7 @@
     </div>
     <div>
       <nav-bar />
-      <main class="container flex-grow">
+      <main class="container flex-grow py-8">
         <slot />
       </main>
     </div>

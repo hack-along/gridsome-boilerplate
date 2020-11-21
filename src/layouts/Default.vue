@@ -3,7 +3,7 @@
     <header class="header">
       <nav-bar />
     </header>
-    <main class="container flex-grow">
+    <main class="container flex-grow py-8">
       <slot />
     </main>
     <g-footer />
