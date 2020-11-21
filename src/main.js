@@ -59,6 +59,8 @@ export default function (Vue, {
   //initilize other plugins
   Vue.use(VueYouTubeEmbed) // To embed a video use:  <youtube :video-id="videoId"></youtube>
 
+  // custom
+  Vue.component('thank-you', ThankYou);
 
 
   Vue.filter('formatDate', function (value, format) {
