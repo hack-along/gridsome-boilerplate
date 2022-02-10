@@ -25,7 +25,7 @@
     "moment-locales-webpack-plugin": "^1.2.0",
     "moment-timezone": "^0.5.32",
     "netlify-cms": "^2.10.68",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "sass-loader": "^8.0.2",
     "tailwindcss": "^1.9.6",
     "webpack-bundle-analyzer": "^3.8.0"
